@@ -7,7 +7,7 @@
         include "function.php";
 
         if (isset($_REQUEST["action"])) {
-            
+            loginDosen($mysqli, $_POST["nama"], $_POST["password"]);
         }
     ?>
 </head>
@@ -17,7 +17,7 @@
             <h1>Login</h1>
             <div class="container">
                 <form action="" method="post">
-                    <!-- <div class="input-field">
+                    <div class="input-field">
                     <input id="nama" type="text" class="validate" name="nama">
                     <label for="Nama">Username</label>
                     </div>
@@ -27,7 +27,7 @@
                     </div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
-                    </button> -->
+                    </button>
                 </form>
                 
             </div>

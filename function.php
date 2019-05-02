@@ -67,3 +67,23 @@
         echo "<script>alert('Berhasil Tambah Ruangan')</script>";
         // $message = "Berhasil Tambah Ruangan";
     }
+
+    // function loginSiswa($mysqli,$username,$password){
+    //     $hasil = executeQuery($mysqli, "select nrp,password from mahasiswa where nrp = ''")
+    // }
+
+    function loginDosen($mysqli,$username,$password){
+        $hasil = executeQuery($mysqli, "select id_dosen, password from dosen where id_dosen = '$username'");
+
+        if (!empty($hasil)) {
+            if ($password == $hasil [0][1]) {
+                echo "<script>alert('Dosen Berhasil Login!')</script>";
+            }
+            else{
+                echo "<script>alert('Password Salah!')</script>";
+            }
+        }
+        else {
+            echo "<script>alert('Username Dosen Salah!')</script>";
+        }
+    }
